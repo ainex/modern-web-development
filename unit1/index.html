@@ -20,11 +20,11 @@
             <a class="navbar-brand" href="javascript:void(0);">ABC Auction</a>
         </div>
         <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-left navbar-input-group" role="search">
+            <form id="search-form" class="navbar-form navbar-left navbar-input-group" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter product name">
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <button id="search-button" type="button" class="btn btn-default">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
@@ -39,156 +39,216 @@
 <!-- / Navbar -->
 
 <div class="container">
+    <div id="home-page" class="home-page show">
+        <div class="row">
+            <!-- Featured Products -->
 
-    <div class="row">
-        <!-- Featured Products -->
+            <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+                 data-interval="3000">
+                <ol class="carousel-indicators">
+                    <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                    <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                </div>
 
-        <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
-             data-interval="3000">
-            <ol class="carousel-indicators">
-                <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
-                <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
-                </div>
-                <div class="item">
-                    <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
-                </div>
-                <div class="item">
-                    <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
-                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
 
-            <!-- Controls -->
-            <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+            <!-- / Featured Products -->
         </div>
+        <br/><br/>
 
-        <!-- / Featured Products -->
+        <div class="row">
+            <!-- Featured Products list with thumbnails and description  -->
+            <ul class="list-unstyled">
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/01.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="product-description-holder col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/02.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/03.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/04.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/05.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+                <li class="col-sm-4">
+                    <div class="col-md-4">
+                        <a href="javascript:void(0)"><img src="assets/img/06.jpg" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2><a href="javascript:void(0)">Item's title</a></h2>
+
+                        <p>
+                            <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!-- / Featured Products list with thumbnails and description  -->
+        </div>
     </div>
-    <br/><br/>
-    <div class="row">
-        <!-- Featured Products list with thumbnails and description  -->
-        <ul class="list-unstyled">
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/01.jpg" alt="" class="img-responsive"></a>
+    <div id="search-result-page" class="search-result-page hidden">
+        <div id="search-filter" class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                    </ol>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
 
-                <div class="product-description-holder col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6">
+                            control 1
+                        </div>
+                        <div class="col-md-12 col-sm-6">
+                            control 2
+                        </div>
+                    </div>
 
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
                 </div>
-            </li>
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/02.jpg" alt="" class="img-responsive"></a>
+                <div class="col-md-4 col-sm-6">
+                    <div class="well well-lg">
+                        well big
+                    </div>
                 </div>
-
-                <div class="col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="well well-lg">
+                        well big
+                    </div>
                 </div>
-            </li>
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/03.jpg" alt="" class="img-responsive"></a>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                    <button type="button" class="btn btn-info btn-block">
+                        <span class="glyphicon glyphicon-search"></span> Find now
+                    </button>
                 </div>
-
-                <div class="col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+            </div>
+            <hr>
+            <div id="search-result-items" class="row">
+                <div class="well well-lg">
+                    items items
                 </div>
-            </li>
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/04.jpg" alt="" class="img-responsive"></a>
-                </div>
-
-                <div class="col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </li>
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/05.jpg" alt="" class="img-responsive"></a>
-                </div>
-
-                <div class="col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </li>
-            <li class="col-sm-4">
-                <div class="col-md-4">
-                    <a href="javascript:void(0)"><img src="assets/img/06.jpg" alt="" class="img-responsive"></a>
-                </div>
-
-                <div class="col-md-8">
-                    <h2><a href="javascript:void(0)">Item's title</a></h2>
-
-                    <p>
-                        <b>Item's description:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </li>
-        </ul>
-        <!-- / Featured Products list with thumbnails and description  -->
+            </div>
+        </div>
     </div>
-
     <!-- Footer -->
     <footer class="text-center">
         <br/>
@@ -204,6 +264,31 @@
 
 <script src="assets/js/jquery-2.1.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script>
 
+    function toggle(obj) {
+
+        var el = document.getElementById(obj);
+//(el.style.display != 'none' ? 'none' : '' );
+        el.classList.toggle("hidden");
+        el.classList.toggle("show");
+
+
+    }
+    function toggleHomepage() {
+        toggle("home-page");
+    }
+    function toggleSearchResultPage() {
+        toggle("search-result-page");
+    }
+    /*document.getElementById("search-button").addEventListener("click", toggleHomepage);*/
+    /*document.getElementById("search-result-page").style.display = "none";*/
+    document.getElementById("search-button").addEventListener("click", function () {
+        toggleHomepage();
+        toggleSearchResultPage();
+        return false;
+    }, false);
+
+</script>
 </body>
 </html>
