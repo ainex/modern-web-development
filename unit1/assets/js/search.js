@@ -1,32 +1,10 @@
 (function ($, undefined) {
     $(function () {
-        $(".slider").slider({});
-        $(".date-picker").datepicker({
-        });
-        $("#spin-edit-bids-number").TouchSpin({
-            verticalbuttons: true
-        });
+
+        initElements();
+
         hideSearchResultPage();
         showHomepage();
-
-        $("#search-button").on("click", function () {
-            hideHomepage();
-            showSearchResultPage();
-            return false;
-        });
-
-        var setBreadcrumbsFunction = (function () {
-            $("#breadcrumb_home_page").on("click", function(){
-                showHomepage();
-                hideSearchResultPage();
-                return false;
-            });
-            $("#breadcrumb_search_page").on("click", function(){
-                hideHomepage();
-                showSearchResultPage();
-                return false;
-            })
-        }());
 
         function showHomepage() {
             var itemsListSrc = $("#home_page-items-list-template").html();
@@ -72,6 +50,37 @@
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
             });
+        }
+
+        function initElements() {
+            $(".slider").slider({});
+            $("#auction-close-date-input").datepicker({
+                todayBtn: true,
+                todayHighlight: true
+            });
+            $("#spin-edit-bids-number").TouchSpin({
+                verticalbuttons: true
+            });
+            $("#auction-close-date-input").val($.format.date(new Date(), 'dd/MM/yyyy'));
+
+            $("#search-button").on("click", function () {
+                hideHomepage();
+                showSearchResultPage();
+                return false;
+            });
+
+            var setBreadcrumbsFunction = (function () {
+                $("#breadcrumb_home_page").on("click", function () {
+                    showHomepage();
+                    hideSearchResultPage();
+                    return false;
+                });
+                $("#breadcrumb_search_page").on("click", function () {
+                    hideHomepage();
+                    showSearchResultPage();
+                    return false;
+                })
+            }());
         }
 
 
