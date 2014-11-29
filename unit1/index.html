@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Auction Homepage</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/jquery.bootstrap-touchspin.min.css"/>
 
 </head>
 <body>
@@ -22,7 +25,8 @@
         <div class="navbar-collapse collapse">
             <form id="search-form" class="navbar-form navbar-left navbar-input-group" role="search">
                 <div class="form-group">
-                    <input id="search-form-input-query" type="text" class="form-control" placeholder="Enter product name" value="">
+                    <input id="search-form-input-query" type="text" class="form-control"
+                           placeholder="Enter product name" value="">
                 </div>
                 <button id="search-button" type="button" class="btn btn-default">Search</button>
             </form>
@@ -85,41 +89,72 @@
         </div>
     </div>
     <!--    Search Page Section: search filter and search results   -->
-    <div id="search-result-page" class="search-result-page">
+    <div id="search-result-page" class="search-result-page container">
         <div id="search-filter" class="row">
             <div class="row">
                 <div class="col-md-12">
                     <ol class="breadcrumb">
-                        <li><button id="breadcrumb_home_page" type="button" class="btn btn-link">Home</button></li>
-                        <li class="active"><button id="breadcrumb_search_page" type="button" class="btn btn-link">Search</button></li>
+                        <li>
+                            <button id="breadcrumb_home_page" type="button" class="btn btn-link">Home</button>
+                        </li>
+                        <li class="active">
+                            <button id="breadcrumb_search_page" type="button" class="btn btn-link">Search</button>
+                        </li>
                     </ol>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-12">
+                <form class="form-horizontal" role="form">
 
-                    <div class="row">
-                        <div class="col-md-12 col-sm-6">
-                            control 1
-                        </div>
-                        <div class="col-md-12 col-sm-6">
-                            control 2
-                        </div>
-                    </div>
+                    <div class="form-group col-md-4 col-sm-12">
+                        <label class="sr-only  control-label" for="titleInput">Product title input</label>
 
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="well well-lg">
-                        well big
+                        <div class="col-sm-12 col-xs-12">Current Price</div>
+                        <div class="col-sm-6">
+                            <input type="text" id="titleInput" class="form-control" placeholder="Product title">
+                        </div>
+                        <div class="col-sm-6">
+                            <select id="categoryInput" class="form-control">
+                                <option>Category1</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="well well-lg">
-                        well big
+                    <div class="form-group col-md-4 col-sm-6">
+                        <div class="col-sm-12 col-xs-12">Current Price</div>
+
+                        <div class="col-sm-6">
+                            <input type="text" id="categoryInput2" class="form-control" value="1000">
+                            </input>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="categoryInput4" class="form-control" value="1500">
+                            </input>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 voffset4">
+                            <input id="ex2" type="text" class=" slider" value=""
+                                   data-slider-min="10" data-slider-max="2500"
+                                   data-slider-step="5"
+                                   data-slider-value="[1000,1500]"/>
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group col-md-4 col-sm-6">
+                        <div class="col-sm-12 col-xs-12">Max Auction Close Date</div>
+
+                        <div class="col-sm-8">
+                            <input class="date-picker form-control" type="text" type="text">
+                        </div>
+                        <div class="col-sm-12 col-xs-12 voffset2"></div>
+                        <div class="col-sm-6 col-xs-6">
+                            <span>Number of Bids</span>
+                        </div>
+                        <div class="col-sm-4 col-xs-4">
+                            <input type="text" id="spin-edit-bids-number" value="3"/>
+                        </div>
+
+                    </div>
+                </form>
             </div>
-            <div class="row">
+            <div class="row voffset4">
                 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
                     <button type="button" class="btn btn-info btn-block">
                         <span class="glyphicon glyphicon-search"></span> Find now
@@ -128,11 +163,11 @@
             </div>
             <hr>
             <div id="search-result-items" class="row">
-                <div class="well well-lg">
+
                     <div id="search-result-items-list" class="row">
-                    <!--    Generated Content   -->
+                        <!--    Generated Content   -->
                     </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -152,60 +187,66 @@
 
 <!-- Templates  -->
 <script id="home_page-items-list-template" type="text/x-handlebars-template">
-<ul class="list-unstyled">
-    {{#each items}}
-    <li class="col-sm-4">
-        <div class="col-md-4">
-            <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
-        </div>
+    <ul class="list-unstyled">
+        {{#each items}}
+        <li class="col-sm-4">
+            <div class="col-md-4">
+                <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
+            </div>
 
-        <div class="product-description-holder col-md-8">
-            <h2><a href={{url}}>{{title}}</a></h2>
+            <div class="product-description-holder col-md-8">
+                <h2><a href={{url}}>{{title}}</a></h2>
 
-            <p>
-                <b>Item's description:</b>
-                {{description}}
-            </p>
-        </div>
-    </li>
-    {{/each}}
-</ul>
+                <p>
+                    <b>Item's description:</b>
+                    {{description}}
+                </p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
 </script>
 
 <script id="search-items-list-template" type="text/x-handlebars-template">
     <ul class="list-unstyled">
         {{#each items}}
-    <li class="col-lg-3 col-md-4 col-sm-6">
-        <div class="col-md-4">
-            <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
-        </div>
-        <div class="col-md-8">
-            <h2><a href={{url}}>{{title}}</a></h2>
-            <p>
-                <b>Item's description:</b>
-                {{description}}
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <span>{{timeleft}}</span><span>left</span>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> {{watchers}}</span>
-            <p>Watchers</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-usd" aria-hidden="true"> {{price}}</span>
-            <p>Current Price</p>
-        </div>
-    </li>
+        <li class="col-md-3 col-sm-6">
+            <div class="col-md-6">
+                <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
+            </div>
+            <div class="col-md-6">
+                <h2><a href={{url}}>{{title}}</a></h2>
+
+                <p>
+                    <b>Item's description:</b>
+                    {{description}}
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <strong>{{timeleft}}</span><span> left</strong>
+            </div>
+            <div class="col-sm-3">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> {{watchers}}</span>
+
+                <p>Watchers</p>
+            </div>
+            <div class="col-sm-3">
+                <strong><span class="glyphicon glyphicon-usd" aria-hidden="true"> {{price}}</span></strong>
+
+                <p>Current Price</p>
+            </div>
+        </li>
         {{/each}}
-        </ul>
+    </ul>
 </script>
 <!-- /Templates  -->
 <!--    Additional JavaScript libraries -->
 <script src="assets/js/jquery-2.1.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/handlebars-v2.0.0.js"></script>
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/jquery.bootstrap-touchspin.min.js"></script>
 <!--    /Additional JavaScript libraries    -->
 
 <!--    Project's JavaScript    -->

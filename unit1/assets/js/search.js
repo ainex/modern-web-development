@@ -1,5 +1,11 @@
 (function ($, undefined) {
     $(function () {
+        $(".slider").slider({});
+        $(".date-picker").datepicker({
+        });
+        $("#spin-edit-bids-number").TouchSpin({
+            verticalbuttons: true
+        });
         hideSearchResultPage();
         showHomepage();
 
