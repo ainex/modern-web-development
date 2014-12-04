@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Auction Homepage</title>
+
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.bootstrap-touchspin.min.css"/>
+    <link rel="stylesheet" href="assets/css/datepicker3.css"/>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ABC Auction</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form id="search-form" class="navbar-form navbar-left navbar-input-group" role="search">
+                <div class="form-group">
+                    <input id="search-form-input-query" type="text" class="form-control"
+                           placeholder="Enter product name" value="">
+                </div>
+                <button id="search-button" type="button" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
+                </li>
+                <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping
+                    cart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- / Navbar -->
+
+<div class="container">
+    <div id="home-page" class="home-page">
+        <div class="row">
+            <!-- Featured Products -->
+
+            <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+                 data-interval="3000">
+                <ol class="carousel-indicators">
+                    <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                    <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals"
+                             class="img-responsive center-block">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+            <!-- / Featured Products -->
+        </div>
+        <br/><br/>
+
+        <div class="row" id="home-page-featured-products-list">
+            <!-- Featured Products list with thumbnails and description  -->
+
+            <!-- / Featured Products list with thumbnails and description  -->
+        </div>
+    </div>
+    <!--    Search Page Section: search filter and search results   -->
+    <div id="search-result-page" class="search-result-page container">
+        <div id="search-filter" class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li>
+                            <button id="breadcrumb_home_page" type="button" class="btn btn-link">Home</button>
+                        </li>
+                        <li class="active">
+                            <button id="breadcrumb_search_page" type="button" class="btn btn-link">Search</button>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group col-md-4 col-sm-12">
+                        <label class="sr-only  control-label" for="titleInput">Product title input</label>
+
+                        <div class="col-sm-12 col-xs-12">Current Price</div>
+                        <div class="col-sm-6">
+                            <input type="text" id="titleInput" class="form-control" placeholder="Product title">
+                        </div>
+                        <div class="col-sm-6">
+                            <select id="categoryInput" class="form-control">
+                                <option>Category1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-6">
+                        <div class="col-sm-12 col-xs-12">Current Price</div>
+
+                        <div class="col-sm-6">
+                            <input type="text" id="categoryInput2" class="form-control" value="1000">
+                            </input>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="categoryInput4" class="form-control" value="1500">
+                            </input>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 voffset4">
+                            <input id="ex2" type="text" class=" slider" value=""
+                                   data-slider-min="10" data-slider-max="2500"
+                                   data-slider-step="5"
+                                   data-slider-value="[1000,1500]"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-6">
+                        <div class="col-sm-12 col-xs-12">Max Auction Close Date</div>
+
+                        <div class="col-sm-8">
+                            <input id="auction-close-date-input" class="date-picker form-control" type="text"
+                                   type="text">
+                        </div>
+                        <div class="col-sm-12 col-xs-12 voffset2"></div>
+                        <div class="col-sm-6 col-xs-6">
+                            <span>Number of Bids</span>
+                        </div>
+                        <div class="col-sm-4 col-xs-4">
+                            <input type="text" id="spin-edit-bids-number" value="3"/>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="row voffset4">
+                <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                    <button type="button" class="btn btn-info btn-block">
+                        <span class="glyphicon glyphicon-search"></span> Find now
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <div id="row search-result-items">
+
+                <div id="search-result-items-list">
+                    <!--    Generated Content   -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--    /Search Page Section: search filter and search results  -->
+    <!-- Footer -->
+    <footer class="text-center">
+        <br/>
+        <a href="javascript:void(0)">Home</a> |
+        <a href="javascript:void(0)">Search</a> |
+        <a href="javascript:void(0)">About Us</a> |
+        <a href="javascript:void(0)">Terms of Service</a>
+        <br/><br/>
+    </footer>
+    <!-- / Footer -->
+
+</div>
+
+<!-- Templates  -->
+<script id="home_page-items-list-template" type="text/x-handlebars-template">
+    <ul class="list-unstyled">
+        {{#each items}}
+        <li class="col-sm-4">
+            <div class="col-md-6">
+                <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
+            </div>
+
+            <div class="product-description-holder col-md-6">
+                <h2><a href={{url}}>{{title}}</a></h2>
+
+                <p>
+                    <b>Item's description:</b>
+                    {{description}}
+                </p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script id="search-items-list-template" type="text/x-handlebars-template">
+    <ul class="list-unstyled row">
+        {{#each items}}
+        <li class="col-lg-3 col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="javascript:void(0)"><img src={{thumb}} alt="" class="img-responsive"></a>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2><a href={{url}}>{{title}}</a></h2>
+
+                        <p>
+                            <b>Item's description:</b>
+                            {{description}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <strong>{{timeleft}}h left</strong>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> {{watchers}}</span>
+
+                        <p>Watchers</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <strong><span class="glyphicon glyphicon-usd" aria-hidden="true"> {{price}}</span></strong>
+
+                        <p>Current Price</p>
+                    </div>
+                </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<!-- /Templates  -->
+<!--    Additional JavaScript libraries -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/handlebars-v2.0.0.js"></script>
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="assets/js/jquery.bootstrap-touchspin.min.js"></script>
+<script src="assets/js/jquery-dateFormat.min.js"></script>
+<!--    /Additional JavaScript libraries    -->
+
+<!--    Project's JavaScript    -->
+<script src="assets/js/search.js"></script>
+<!--    /Project's JavaScript   -->
+
+
+</body>
+</html>
